@@ -18,48 +18,78 @@ topairline(AIRLINE) :-
 Schreiben Sie eine Abfrage pro Aufgabe in PROLOG:
 
 - Überprüfen Sie, ob Delta als Fluggesellschaft in der Datenbank definiert ist
+~~~Prolog
 airline(delta)
+~~~
 
 - Finden Sie alle insolventen Fluggesellschaften
+~~~Prolog
 insolvent(X)
+~~~
 
 - Überprüfen Sie, ob SAS laut Datenbank im Betrieb ist
+~~~Prolog
 not(insolvent(sas))
+~~~
 
 - Überprüfen Sie, ob mindestens eine der Fluggesellschaften WoWAir oder Wizzair im Betrieb sind
+~~~Prolog
 insolvent(wowair);insolvent(wizzair)
+~~~
 
-- Finden Sie die Fluggesellschaft, die laut Datenbank genau 142,3 Millionen Passagiere pro Jahr befördert *
+- Finden Sie die Fluggesellschaft, die laut Datenbank genau 142,3 Millionen Passagiere pro Jahr befördert 
+~~~Prolog
 passengers(X, 142300000)
+~~~
 
-- Finden Sie die Fluggesellschaft, die laut Datenbank mehr als 100 Tausend Mitarbeiter beschäftigt*
+- Finden Sie die Fluggesellschaft, die laut Datenbank mehr als 100 Tausend Mitarbeiter beschäftigt
+~~~Prolog
 employees(X, P), P>100000
+~~~
 
-- Finden Sie die Fluggesellschaft, die laut Datenbank weniger als 10 Tausend Mitarbeiter beschäftigt*
+- Finden Sie die Fluggesellschaft, die laut Datenbank weniger als 10 Tausend Mitarbeiter beschäftigt
+~~~Prolog
 employees(X, P), P<10000
+~~~
 
-- Finden Sie die Fluggesellschaft, die laut Datenbank mehr als 100 Millionen Passagiere pro Jahr befördert und weniger als 20 Tausend Mitarbeiter hat*
+- Finden Sie die Fluggesellschaft, die laut Datenbank mehr als 100 Millionen Passagiere pro Jahr befördert und weniger als 20 Tausend Mitarbeiter hat
+~~~Prolog
 passengers(X, P), P>100000000, employees(X, E), E<20000
+~~~
 
-- Überprüfen Sie, ob Airfrance zu den Top-Fluggesellschaften gehört?*
+- Überprüfen Sie, ob Airfrance zu den Top-Fluggesellschaften gehört?
+~~~Prolog
 topairline(airfrance)
+~~~
 
-- Überprüfen Sie, ob British Airways zu den Top-Fluggesellschaften gehört oder genau 45 Tausend Mitarbeiter beschäftigt* 
+- Überprüfen Sie, ob British Airways zu den Top-Fluggesellschaften gehört oder genau 45 Tausend Mitarbeiter beschäftigt 
+~~~Prolog
 topairline(britishairways);employees(britishairways,45000)
+~~~
 
-- Finden Sie alle Fluggesellschaften, die mit dem Airbus A380 fliegen*
+- Finden Sie alle Fluggesellschaften, die mit dem Airbus A380 fliegen
+~~~Prolog
 aircraft(X, a380, airbus)
+~~~
 
-- Finden Sie alle Flugzeugmodelle von Boing der Fluggesellschaft Airfrance*
+- Finden Sie alle Flugzeugmodelle von Boing der Fluggesellschaft Airfrance
+~~~Prolog
 aircraft(airfrance, X, boeing)
+~~~
 
-- Finden Sie die Fluggesellschaften, die mit dem Modell 737 von Boeing fliegen*
+- Finden Sie die Fluggesellschaften, die mit dem Modell 737 von Boeing fliegen
+~~~Prolog
 aircraft(X, 737, boeing)
+~~~
 
 Zusatzaufgabe:
 
-- Finden Sie alle Flugzeugmodelle von Bombardier der Datenbank*
+- Finden Sie alle Flugzeugmodelle von Bombardier der Datenbank
+~~~Prolog
 aircraft(X, Y, bombardier)
+~~~
 
 - Finden Sie die insolvente Airline, die Flugzeuge von Boeing, Cessna und Bombardier hatte 
-insolvent(X), (aircraft(X, A, boeing), aircraft(X, B, cessna), aircraft(X, C, bombardier))
+~~~Prolog
+insolvent(X), (aircraft(X, _, boeing), aircraft(X, _, cessna), aircraft(X, _, bombardier))
+~~~
